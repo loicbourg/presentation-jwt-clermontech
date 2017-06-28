@@ -14,7 +14,7 @@ var slides = [
     require('slides/comment-on-lutilise.html'),
     require('slides/scaling-horizontal.html'),
     require('slides/appel-service-tiers.html'),
-    require('slides/single-sign-on.html'),
+    // require('slides/single-sign-on.html'),
     require('slides/ressources-interessantes.html'),
     require('slides/questions.html'),
 ].join('\n');
