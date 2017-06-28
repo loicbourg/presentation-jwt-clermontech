@@ -1,42 +1,27 @@
 <section>
-    <h4>Comment stocker le token ?</h4>
+    <h4>Comment stocker le token sur le navigateur ?</h4>
 
     <section>
-        cookie httpOnly: <br />
-        avantages <br />
+        <h3>cookie httpOnly</h3>
         <ul>
-            <li>
-                cross domain
+            <li class="fragment" >
+                vulnerabilité csrf
             </li>
-        </ul>
-        <br /> problémes <br />
-        <ul>
-            <li>
-                vulnerabilité csrf (possibilité d'ajout jeton pour mitigation)
-            </li>
-            <li>
+            <li class="fragment" >
                 non lisible par le js
             </li>
         </ul>
-            </section>
+    </section>
 
 
     <section>
-        local storage
-        avantages
+        <h3>local storage </h3>
         <ul>
-            <li>
+            <li class="fragment" >
                 lisible par le js
             </li>
-            <li>
-                on n'est pas obligé d'envoyer le token à chaque fois
-            </li>
-        </ul>
-
-        <br /> problémes <br />
-        <ul>
-            <li>
-                vulerable xss (peut être un peu mitigé avec un bon CSP mais ne protege pas totalement)
+            <li class="fragment" >
+                vulerabilité xss
             </li>
         </ul>
     </section>

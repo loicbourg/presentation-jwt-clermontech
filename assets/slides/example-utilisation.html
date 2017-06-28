@@ -1,0 +1,37 @@
+<section>
+    <h4>Exemple</h4>
+    <section>
+<pre>
+    <code class="hljs php" data-trim >
+use Namshi\JOSE\SimpleJWS;
+
+$jws  = new SimpleJWS(array(
+    'alg' => 'RS256'
+));
+$jws->setPayload(array(
+    'id' => 42,
+    'name': 'John Doe',
+    'exp' => time() + 3600
+));
+
+$privateKey = 'Clé privée RSA';
+$jws->sign($privateKey);
+
+echo $jws->getTokenString();
+    </code>
+</pre>
+    </section>
+
+    <section>
+        <pre>
+            <code class="hljs php" >
+use Namshi\JOSE\SimpleJWS;
+
+$jws        = SimpleJWS::load($token);
+$public_key = 'Clé publique RSA';
+
+$jws->isValid($public_key, 'RS256')
+            </code>
+        </pre>
+    </section>
+</section>

@@ -8,12 +8,13 @@
         <span class="fragment highlight-green">LQbQQ2S6oZqt_YZ2y4deUYCLyTCn-VhUQKZpQjTOcnU</span>
     </section>
     <section>
+        <h4>HEADER</h4>
         <span style="color: red" >eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>
 
 	<pre>
         <code>
             {
-                "alg": "HS256",
+                "alg": "RS256",
                 "typ": "JWT"
             }
         </code>
@@ -23,13 +24,14 @@
     </section>
 
     <section>
+        <h4>PAYLOAD</h4>
         <span style="color: blue" >eyJuYW1lIjoiSm9obiBEb2UiLCJhZG1pbiI6dHJ1ZX0</span>
-
 	<pre>
         <code>
             {
                 "name": "John Doe",
-                "id": 42
+                "id": 42,
+                "exp": 1498599730
             }
         </code>
     </pre>
@@ -38,14 +40,15 @@
     </section>
 
     <section>
+        <h4>SIGNATURE</h4>
         <span style="color: green" >OLvs36KmqB9cmsUrMpUutfhV52_iSz4bQMYJjkI_TLQ</span>
 
 	<pre>
         <code>
-            HMACSHA256(
-            base64UrlEncode(header) + "." +
-            base64UrlEncode(payload),
-            secret
+            RSASHA256(
+                base64UrlEncode(header) + "." +
+                base64UrlEncode(payload),
+                'Clé privée RSA'
             )
         </code>
     </pre>
